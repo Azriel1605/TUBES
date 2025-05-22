@@ -7,27 +7,36 @@ import (
 )
 
 func AddCrypto(A *data.TabCrypto) {
-	var i, j int
+	var i, j, n, k int
 	var name string
 	var price float64
-	fmt.Println("Masukkan nama crypto: ")
-	fmt.Scan(&name)
-	i = SequencialSearchCrypto(A, name, false)
-	if i == -1 {
-		for A[j].Name != "" && j < data.NMAX {
-			j++
-		}
-		if j == data.NMAX {
-			fmt.Println("Array Crypto sudah mencapai batas maksimal")
+
+	fmt.Println("Masukkkan jumlah cyrpto yang akan ditambahkan")
+	fmt.Scan(&n)
+
+	// Bikin looping
+	for k=0; k < n; k++ {
+		fmt.Println("Masukkan nama crypto dan harga: ")
+		fmt.Scan(&name, &price)
+		
+		i = SequencialSearchCrypto(A, name, false)
+		
+		if i == -1 {
+			for A[j].Name != "" && j < data.NMAX {
+				j++
+			}
+			if j >= data.NMAX {
+				fmt.Println("Array Crypto sudah mencapai batas maksimal")
+			} else {
+				A[j].Name = name
+				A[j].Price = price
+			}
 		} else {
-			A[j].Name = name
-			fmt.Printf("Masukkan harga %s: ", name)
-			fmt.Scan(&price)
-			A[j].Price = price
+			fmt.Println(name, " sudah terdaftar")
 		}
-	} else {
-		fmt.Println("Crypto sudah terdaftar")
 	}
+
+
 }
 
 func DeleteCrypto(A *data.TabCrypto) { // DONE

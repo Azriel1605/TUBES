@@ -25,8 +25,6 @@ func Beli(A *data.TabCrypto) {
 		} else {
 			fmt.Println("Saldo tidak cukup")
 		}
-	} else {
-		fmt.Println("Crypto tidak ditemukan")
 	}
 }
 
@@ -45,11 +43,10 @@ func Jual(P *data.TabPorto) {
 			v.Saldo += (P[i].MarketPrice * float64(quantity))
 			// Masukkan transaksi ke hisotory
 			HistoryRecord(&v.History, &v.IdxHistory, name, P[i].MarketPrice, quantity, "sell")
+			SellPortofolio(P, name, quantity)
 			fmt.Println("Transaksi berhasil")
 		} else {
 			fmt.Println("Jumlah crypto yang ingin dijual melebihi jumlah crypto yang dimiliki")
 		}
-	} else {
-		fmt.Println("Crypto tidak ditemukan")
 	}
 }

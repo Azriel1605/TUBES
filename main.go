@@ -4,6 +4,7 @@ import (
 	"TUBES/function"
 	"TUBES/v"
 	"fmt"
+
 )
 
 func main() {
@@ -12,12 +13,16 @@ func main() {
 	fmt.Println("Masukkan saldo virtual yang anda miliki: ")
 	fmt.Scan(&v.Saldo)
 	for choice != 9 {
+
 		function.MainMenu()
 		fmt.Scan(&choice)
+
+		function.ClearScreen()
 		switch choice {
 		case 1:
 			function.ModifyCryptoMenu()
 			fmt.Scan(&choice)
+			
 			switch choice {
 			case 1:
 				function.AddCrypto(&v.Crypto)
@@ -32,8 +37,11 @@ func main() {
 			}
 
 		case 2:
+
 			function.TransaksiMenu()
 			fmt.Scan(&choice)
+			
+
 			switch choice {
 			case 1:
 				function.Beli(&v.Crypto)
@@ -55,21 +63,24 @@ func main() {
 			fmt.Println("Sebelum diurutkan")
 			function.ShowCrypto(&v.Crypto)
 			function.SelectionSortCrypto(&v.Crypto)
-			fmt.Println("\n\n\n")
+			fmt.Print("\n\n\n")
 			fmt.Println("Setelah diurutkan")
 			function.ShowCrypto(&v.Crypto)
 
 		case 7:
+			
 			fmt.Println("Sebelum diurutkan")
 			function.ShowPortofolio(&v.Porto)
 			function.SelectionSortPorto(&v.Porto)
-			fmt.Println("\n\n\n")
+			fmt.Print("\n\n\n")
 			fmt.Println("Setelah diurutkan")
 			function.ShowPortofolio(&v.Porto)
 
 		case 8:
+			
 			function.ShowCrypto(&v.Crypto)
 		case 9:
+			
 			fmt.Println("Sampai Jumpa")
 
 		}
