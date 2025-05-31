@@ -6,6 +6,9 @@ import (
 )
 
 func HistoryRecord(H *data.TabHistory, idx *int, name string, price float64, quantity int, transactionType string) {
+	// I.S Semua parameter terdefinisi
+	// F.S Mencatat history transaksi ke dalam array H
+
 	H[*idx].Name = name
 	H[*idx].BuyPrice = price
 	H[*idx].Quantity = quantity
@@ -15,6 +18,9 @@ func HistoryRecord(H *data.TabHistory, idx *int, name string, price float64, qua
 }
 
 func ShowHistory(H *data.TabHistory) {
+	// I.S H terdefinisi
+	// F.S Menampilkan semua history transaksi dalam array H
+
 	var i int
 	fmt.Println("+---------------------------------------------------------------------------+")
 	fmt.Println("|                             History Transaksi                             |")

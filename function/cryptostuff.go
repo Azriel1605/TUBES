@@ -7,6 +7,9 @@ import (
 )
 
 func AddCrypto(A *data.TabCrypto) {
+	// I.S A terdefinisi
+	// F.S Menambahkan crypto baru ke dalam array A
+
 	var i, j, n, k int
 	var name string
 	var price float64
@@ -40,6 +43,9 @@ func AddCrypto(A *data.TabCrypto) {
 }
 
 func DeleteCrypto(A *data.TabCrypto) { // DONE
+	// I.S A terdefinisi
+	// F.S Menghapus crypto dari array A
+
 	var i, j int
 	var name string
 	fmt.Println("Masukkan nama crypto yang ingin dihapus: ")
@@ -56,6 +62,9 @@ func DeleteCrypto(A *data.TabCrypto) { // DONE
 }
 
 func UpdateCrypto(A *data.TabCrypto) { // DONE
+	// I.S A terdefinisi
+	// F.S Mengupdate harga crypto dalam array A
+
 	var i, idxP int
 	var name string
 	fmt.Println("Masukkan nama crypto yang ingin diubah: ")
@@ -72,6 +81,9 @@ func UpdateCrypto(A *data.TabCrypto) { // DONE
 }
 
 func ShowCrypto(A *data.TabCrypto) {
+	// I.S A terdefinisi
+	// F.S Menampilkan semua crypto dalam array A
+	
 	var i int
 	fmt.Println("+--------------------------------------+")
 	fmt.Println("|            CRYPTOCURRENCY            |")

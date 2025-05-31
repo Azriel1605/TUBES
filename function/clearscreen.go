@@ -7,6 +7,8 @@ import (
 )
 
 func ClearScreen() {
+    // Menghapus layar terminal
+
     var cmd *exec.Cmd
     switch runtime.GOOS {
     case "windows":

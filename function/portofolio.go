@@ -28,15 +28,9 @@ func AddPortofolio(A *data.TabCrypto,
 }
 
 func SellPortofolio(P *data.TabPorto, name string, n int){
-	// Ngurangin Lot di portofolio
-	// 1. Cari index di portofolio -> kalau ga ada print(tidak ditemukan)
-	// 2. Kalau ada, jika n > P[i].quantity, berati lot nya lebih dari yang ada di portofolio
-	// 3. Kalau ga minus, Kurangin stock lot nya
-	// 4. Kalau udah 0, hapus dari portofolio
-
-	// Code nya ditulis disini
-	// bentar bang mak gw neplon
-	// sok ae, gw sholat dl
+	// I.S P terdefinisi, name terdefinisi, n terdefinisi
+	// F.S Menjual crypto dari portofolio P
+	// Jika crypto tidak ditemukan, tampilkan pesan "Tidak ditemukan"
 
 	var i int = SequencialSearchPorto(P, name)
 
@@ -63,7 +57,9 @@ func SellPortofolio(P *data.TabPorto, name string, n int){
 func RmPortofolio(P *data.TabPorto,
 	name string) {
 
-	// Ini buat ngapusnya
+	// I.S P terdefinisi, name terdefinisi
+	// F.S Menghapus crypto dari portofolio P
+
 	var i int = SequencialSearchPorto(P, name)
 	if i != -1 {
 		P[i].Name = ""
@@ -74,8 +70,9 @@ func RmPortofolio(P *data.TabPorto,
 }
 
 func ShowPortofolio(P *data.TabPorto) {
-	//Looping index  NMAX
-	//fmtprint P[i].name, .quantiti etc etc
+	// I.S P terdefinisi
+	// F.S Menampilkan semua crypto dalam portofolio P
+
 	var i int
 	var equity int
 

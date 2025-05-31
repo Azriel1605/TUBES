@@ -6,6 +6,9 @@ import (
 )
 
 func CariCrypto(A *data.TabCrypto) {
+	// I.S A terdefinisi
+	// F.S Mencari crypto berdasarkan nama menggunakan binary search
+
 	var i int
 	var name string
 	fmt.Println("Masukkan nama crypto yang ingin dicari: ")

@@ -7,17 +7,24 @@ import (
 )
 
 func Beli(A *data.TabCrypto) {
+	// I.S A terdefinisi
+	// F.S Melakukan transaksi pembelian crypto, jika berhasil maka saldo virtual akan berkurang sesuai dengan harga crypto yang dibeli
+
 	var i int
 	var name string
 	var quantity int
+
 	fmt.Println("Masukkan nama crypto yang ingin dibeli: ")
 	fmt.Scan(&name)
-	i = SequencialSearchCrypto(A, name, false)
-	if i != -1 {
+
+	i = SequencialSearchCrypto(A, name, false) // Jika crypto tidak ditemukan, i akan bernilai -1
+
+	if i != -1 { // Jika crypto ditemukan, if akan dieksekusi
 		fmt.Println("Masukkan jumlah crypto yang ingin dibeli: ")
 		fmt.Scan(&quantity)
-		if v.Saldo >= (A[i].Price * float64(quantity)) {
+		if v.Saldo >= (A[i].Price * float64(quantity)) { // Periksa apakah saldo cukup untuk membeli crypto
 			v.Saldo -= (A[i].Price * float64(quantity))
+
 			// Masukkan transaksi ke hisotory
 			HistoryRecord(&v.History, &v.IdxHistory, name, A[i].Price, quantity, "buy")
 			AddPortofolio(A, &v.Porto, name, quantity)
@@ -30,6 +37,9 @@ func Beli(A *data.TabCrypto) {
 
 // 
 func Jual(P *data.TabPorto) {
+	// I.S P terdefinisi
+	// F.S Melakukan transaksi penjualan crypto, jika berhasil maka saldo virtual akan bertambah sesuai dengan harga crypto yang dijual
+
 	var i int
 	var name string
 	var quantity int
